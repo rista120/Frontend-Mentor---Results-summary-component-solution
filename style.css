@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  /* COLORS */
+  /* primary */
+  --light-red: hsl(0, 100%, 67%);
+  --orangey-yellow: hsl(39, 100%, 56%);
+  --green-teal: hsl(166, 100%, 37%);
+  --cobalt-blue: hsl(234, 85%, 45%);
+
+  --hsl-light-red: 0, 100%, 67%;
+  --hsl-orangey-yellow: 39, 100%, 56%;
+  --hsl-green-teal: 166, 100%, 37%;
+  --hsl-cobalt-blue: 234, 85%, 45%;
+  /* Neutral */
+  --white: white;
+  --pale-blue: hsl(221, 100%, 96%);
+  --light-lavender: hsl(241, 100%, 89%);
+  --dark-gray-blue: hsl(224, 30%, 27%);
+  /* Gradients */
+  --light-slate-blue: hsl(252, 100%, 67%);
+  --light-royal-blue: hsl(241, 81%, 54%);
+
+  --violet-blue: hsla(256, 72%, 46%, 1);
+  --persian-blue: hsla(241, 72%, 46%, 0);
+
+  --bg-gradient: linear-gradient(
+    var(--light-slate-blue),
+    var(--light-royal-blue)
+  );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 18px;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 28px;
+}
+
+/* Container */
+.container {
+  display: grid;
+  grid-template-columns: 368px 368px;
+  overflow: hidden;
+  border-radius: 32px;
+  box-shadow: 0px 10px 30px 10px var(--pale-blue);
+}
+
+/* RESULT BLOCK */
+
+.result-block {
+  background: var(--bg-gradient);
+  padding: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 32px;
+}
+
+.result-block h2 {
+  color: var(--light-lavender);
+}
+
+.result-score {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background: linear-gradient(var(--violet-blue), var(--persian-blue));
+  font-size: 74px;
+  font-weight: 700;
+  color: var(--white);
+  position: relative;
+  text-align: center;
+  line-height: 100%;
+  margin-bottom: 32px;
+}
+
+.global-score {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.result-score span:not(.global-score) {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--light-lavender);
+  opacity: 0.6;
+  position: absolute;
+  top: 60%;
+  left: 0;
+  width: 100%;
+}
+
+.result-text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: var(--light-lavender);
+}
+.result-text span {
+  color: var(--white);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+/* SUMMARY BLOCK */
+.summary-block {
+  padding: 45px 40px;
+  color: var(--dark-gray-blue);
+}
+
+.score-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.score-details > div {
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-radius: 12px;
+}
+
+.red {
+  background-color: hsla(var(--hsl-light-red), 0.1);
+}
+.red h3 {
+  color: var(--light-red);
+}
+
+.orange {
+  background-color: hsla(var(--hsl-orangey-yellow), 0.1);
+}
+.orange h3 {
+  color: var(--orangey-yellow);
+}
+
+.green {
+  background-color: hsla(var(--hsl-green-teal), 0.1);
+}
+.green h3 {
+  color: var(--green-teal);
+}
+
+.blue {
+  background-color: hsla(var(--hsl-cobalt-blue), 0.1);
+}
+.blue h3 {
+  color: var(--cobalt-blue);
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.category h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.score span {
+  font-weight: 700;
+  margin-right: 9px;
+}
+
+button {
+  width: 100%;
+  background-color: var(--dark-gray-blue);
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 16px;
+  border-radius: 28px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--bg-gradient);
+}
+
+@media screen and (max-width: 736px) {
+  .container {
+    grid-template-columns: 368px;
+    margin: 10px 0;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    grid-template-columns: 1fr;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .result-block {
+    border-radius: 0 0 32px 32px;
+  }
+}
