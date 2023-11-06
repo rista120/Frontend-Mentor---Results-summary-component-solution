@@ -25,7 +25,7 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](https://github.com/rista120/Frontend-Mentor---Results-summary-component-solution/blob/main/index.html)
+- [Solution URL](https://github.com/rista120/Frontend-Mentor---Results-summary-component-solution)
 - [Live site URL](https://rista120.github.io/Frontend-Mentor---Results-summary-component-solution/)
 
 ### Built with
